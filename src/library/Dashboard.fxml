@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="986.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.dashboardController">
+   <children>
+      <BorderPane layoutX="14.0" layoutY="69.0" prefHeight="600.0" prefWidth="986.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="102.0" prefWidth="986.0" styleClass="top-form" stylesheets="@dahsboardDesign.css" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="45.0" prefWidth="986.0" styleClass="top-form" stylesheets="@dahsboardDesign.css" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="close" layoutX="926.0" layoutY="2.0" mnemonicParsing="false" onAction="#exit" prefHeight="24.0" prefWidth="60.0" styleClass="close-btn" stylesheets="@dahsboardDesign.css" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                           <graphic>
+                              <FontAwesomeIcon iconName="CLOSE" size="1.2em" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="minimize" layoutX="876.0" layoutY="2.0" mnemonicParsing="false" onAction="#minimize" prefHeight="24.0" prefWidth="48.0" styleClass="minimize-btn" stylesheets="@dahsboardDesign.css">
+                           <graphic>
+                              <FontAwesomeIcon iconName="MINUS" size="1.2em" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="bars_btn" layoutX="28.0" layoutY="62.0" mnemonicParsing="false" onAction="#slideBars" prefHeight="32.0" prefWidth="38.0" styleClass="bars" stylesheets="@dahsboardDesign.css" visible="false" AnchorPane.topAnchor="57.0">
+                     <graphic>
+                        <FontAwesomeIcon iconName="BARS" size="2em" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="arrow_btn" layoutX="28.0" layoutY="62.0" mnemonicParsing="false" onAction="#sliderArrow" prefHeight="32.0" prefWidth="38.0" styleClass="bars" stylesheets="@dahsboardDesign.css" AnchorPane.topAnchor="57.0">
+                     <graphic>
+                        <FontAwesomeIcon iconName="CHEVRON_LEFT" size="2em" />
+                     </graphic>
+                  </Button>
+                  <Label layoutX="73.0" layoutY="57.0" text="Library" AnchorPane.topAnchor="57.0">
+                     <font>
+                        <Font name="Segoe UI Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="currentForm_label" alignment="CENTER_RIGHT" layoutX="780.0" layoutY="63.0" text="Available Books">
+                     <font>
+                        <Font name="Berlin Sans FB" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="244.0" layoutY="67.0" text="Student Portal">
+                     <font>
+                        <Font name="Berlin Sans FB" size="20.0" />
+                     </font>
+                  </Label>
+                  <Line endX="99.99998474121094" endY="9.399993896484375" layoutX="132.0" layoutY="93.0" startX="99.99998474121094" startY="-39.0" />
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="498.0" prefWidth="224.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="halfNav_form" prefHeight="498.0" prefWidth="77.0" styleClass="nav-form" stylesheets="@dahsboardDesign.css" AnchorPane.leftAnchor="0.0">
+                     <children>
+                        <Circle fx:id="smallCircle_image" fill="#2b2f32" layoutX="39.0" layoutY="44.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Line endX="47.19996643066406" endY="-7.62939453125E-6" layoutX="22.0" layoutY="94.0" startX="-8.000012397766113" startY="-7.62939453125E-6" stroke="WHITE" />
+                        <Button fx:id="halfNav_availablebtn" layoutX="10.0" layoutY="124.0" mnemonicParsing="false" onAction="#sideNavButtonDesign" prefHeight="54.0" prefWidth="57.0" styleClass="nav-btn" stylesheets="@dahsboardDesign.css">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" iconName="CLIPBOARD" size="1.2em" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="halfNav_borrowingbtn" layoutX="10.0" layoutY="194.0" mnemonicParsing="false" onAction="#sideNavButtonDesign" prefHeight="54.0" prefWidth="57.0" styleClass="nav-btn" stylesheets="@dahsboardDesign.css">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" iconName="BOOK" size="1.2em" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="halfNav_returnbtn" layoutX="10.0" layoutY="268.0" mnemonicParsing="false" onAction="#sideNavButtonDesign" prefHeight="54.0" prefWidth="57.0" styleClass="nav-btn" stylesheets="@dahsboardDesign.css">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" iconName="FILE" size="1.2em" text="" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="halfNav_addbtn" layoutX="10.0" layoutY="339.0" mnemonicParsing="false" onAction="#sideNavButtonDesign" prefHeight="54.0" prefWidth="57.0" styleClass="nav-btn" stylesheets="@dahsboardDesign.css">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" iconName="BOOKMARK" size="1.2em" text="" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="nav_form" layoutX="12.0" prefHeight="498.0" prefWidth="224.0" styleClass="nav-form" stylesheets="@dahsboardDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Circle fx:id="circle_image" fill="#293036" layoutX="105.0" layoutY="100.0" radius="72.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Label layoutX="74.0" layoutY="179.0" text="Welcome" textFill="WHITE">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="studentNumber_label" alignment="CENTER" layoutX="60.0" layoutY="208.0" prefHeight="23.0" prefWidth="102.0" textFill="WHITE">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="15.0" layoutY="212.0" prefHeight="15.0" prefWidth="53.0" text="Admin#:" textFill="WHITE">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="12.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="availableBooks_btn" layoutX="28.0" layoutY="277.0" mnemonicParsing="false" onAction="#navButtonDesign" prefHeight="30.0" prefWidth="167.0" styleClass="nav-btn" stylesheets="@dahsboardDesign.css" text="Available Books" />
+                        <Button fx:id="borrowingBooks_btn" layoutX="27.0" layoutY="318.0" mnemonicParsing="false" onAction="#navButtonDesign" prefHeight="30.0" prefWidth="167.0" styleClass="nav-btn" stylesheets="@dahsboardDesign.css" text="Borrowing Books" />
+                        <Button fx:id="returnBooks_btn" layoutX="28.0" layoutY="358.0" mnemonicParsing="false" onAction="#navButtonDesign" prefHeight="30.0" prefWidth="167.0" styleClass="nav-btn" stylesheets="@dahsboardDesign.css" text="Return Books" />
+                        <Button fx:id="addBooks_btn" layoutX="28.0" layoutY="403.0" mnemonicParsing="false" onAction="#navButtonDesign" prefHeight="30.0" prefWidth="167.0" styleClass="nav-btn" stylesheets="@dahsboardDesign.css" text="Add Books" />
+                        <Button fx:id="edit_btn" layoutX="42.0" layoutY="40.0" mnemonicParsing="false" onAction="#insertImage" prefHeight="119.0" prefWidth="126.0" styleClass="edit-btn" stylesheets="@dahsboardDesign.css" />
+                        <FontAwesomeIcon fx:id="edit_icon" fill="WHITE" iconName="EDIT" layoutX="93.0" layoutY="108.0" size="2em" />
+                        <Line endX="100.0" layoutX="112.0" layoutY="256.0" startX="-100.0" stroke="WHITE" />
+                        <Button fx:id="logout_btn" layoutX="14.0" layoutY="448.0" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="35.0" styleClass="logout-btn" stylesheets="@dahsboardDesign.css">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" iconName="SIGN_OUT" size="1.5em" />
+                           </graphic>
+                        </Button>
+                        <Label layoutX="60.0" layoutY="453.0" text="Sign Out" textFill="WHITE" AnchorPane.leftAnchor="57.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane fx:id="mainCenter_form" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="availableBooks_form" prefHeight="497.6" prefWidth="762.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="268.0" layoutY="13.0" prefHeight="472.0" prefWidth="480.0" styleClass="card-form" stylesheets="@dahsboardDesign.css">
+                           <children>
+                              <TableView fx:id="availableBooks_tableView" layoutX="14.0" layoutY="14.0" onMouseClicked="#selectAvailableBooks" prefHeight="443.0" prefWidth="447.0">
+                                <columns>
+                                  <TableColumn fx:id="col_ab_bookTitle" prefWidth="111.0" text="Book Title" />
+                                  <TableColumn fx:id="col_ab_author" prefWidth="111.0" text="Author" />
+                                    <TableColumn fx:id="col_ab_bookType" prefWidth="111.0" text="Book Type" />
+                                    <TableColumn fx:id="col_ab_publishedDate" prefWidth="111.0" text="Published Date" />
+                                    <TableColumn fx:id="col_ab_image" prefWidth="111.0" text="Image" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="472.0" prefWidth="232.0" styleClass="card-form" stylesheets="@dahsboardDesign.css">
+                           <children>
+                              <AnchorPane layoutX="49.0" layoutY="14.0" prefHeight="171.0" prefWidth="134.0" styleClass="image-card" stylesheets="@dahsboardDesign.css">
+                                 <children>
+                                    <ImageView fx:id="availableBooks_imageView" fitHeight="171.0" fitWidth="134.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="take_btn" layoutX="79.0" layoutY="293.0" mnemonicParsing="false" onAction="#abTakeButton" prefHeight="38.0" prefWidth="77.0" styleClass="take-btn" stylesheets="@dahsboardDesign.css" text="Take" />
+                              <Label fx:id="availableBooks_title" layoutX="37.0" layoutY="198.0" prefHeight="20.0" prefWidth="182.0">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="105.0" layoutY="226.0" text="Title">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Separator layoutX="252.0" layoutY="29.0" orientation="VERTICAL" prefHeight="439.0" prefWidth="2.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="borrowingBooks_form" layoutX="64.0" layoutY="126.0" prefHeight="498.4" prefWidth="762.4" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="261.0" layoutY="12.0" prefHeight="473.0" prefWidth="486.0" styleClass="card-form" stylesheets="@dahsboardDesign.css">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" text="Student details">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="32.0" layoutY="71.0" text="Admin:">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="take_StudentNumber" layoutX="225.0" layoutY="66.0" prefHeight="30.0" prefWidth="190.0" styleClass="label_take" stylesheets="@dahsboardDesign.css" text="Label" />
+                              <Label layoutX="31.0" layoutY="122.0" text="First Name:">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="32.0" layoutY="176.0" text="Last Name:">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="32.0" layoutY="226.0" text="Gender:">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="take_FirstName" layoutX="225.0" layoutY="118.0" prefWidth="190.0" styleClass="textfield_take" stylesheets="@dahsboardDesign.css" />
+                              <TextField fx:id="take_LastName" layoutX="225.0" layoutY="172.0" prefWidth="190.0" styleClass="textfield_take" stylesheets="@dahsboardDesign.css" />
+                              <ComboBox fx:id="take_Gender" layoutX="225.0" layoutY="221.0" onAction="#gender" prefWidth="150.0" promptText="Choose..." styleClass="textfield_take" stylesheets="@dahsboardDesign.css" />
+                              <Label layoutX="14.0" layoutY="274.0" text="Books details">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="35.0" layoutY="331.0" text="Book Title:">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="take_BookTitle" layoutX="225.0" layoutY="327.0" onAction="#findBook" prefWidth="190.0" styleClass="textfield_take" stylesheets="@dahsboardDesign.css" />
+                              <Label layoutX="32.0" layoutY="384.0" text="Issue Date:">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="take_IssueDate" layoutX="225.0" layoutY="384.0" prefHeight="30.0" prefWidth="190.0" styleClass="label_take" stylesheets="@dahsboardDesign.css" text="Label" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="14.0" layoutY="12.0" prefHeight="473.0" prefWidth="233.0" styleClass="card-form" stylesheets="@dahsboardDesign.css">
+                           <children>
+                              <AnchorPane layoutX="53.0" layoutY="22.0" prefHeight="162.0" prefWidth="127.0" styleClass="image-card" stylesheets="@dahsboardDesign.css">
+                                 <children>
+                                    <ImageView fx:id="take_ImageView" fitHeight="162.0" fitWidth="127.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="18.0" layoutY="198.0" prefHeight="139.0" prefWidth="200.0" styleClass="card-form" stylesheets="@dahsboardDesign.css">
+                                 <children>
+                                    <Label layoutX="13.0" layoutY="14.0" prefHeight="20.0" prefWidth="40.0" text="Title:" AnchorPane.leftAnchor="10.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="12.0" layoutY="36.0" text="Author:" AnchorPane.bottomAnchor="89.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="36.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="11.0" layoutY="64.0" prefHeight="20.0" prefWidth="68.0" text="BookType:" AnchorPane.bottomAnchor="63.19999999999999" AnchorPane.leftAnchor="11.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="11.0" layoutY="95.0" text="Published Date:" AnchorPane.bottomAnchor="32.19999999999999" AnchorPane.leftAnchor="10.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="take_titleLabel" layoutX="51.0" layoutY="15.0" prefHeight="18.0" prefWidth="136.0" text="Label" />
+                                    <Label fx:id="take_authorLabel" layoutX="68.0" layoutY="38.0" prefHeight="18.0" prefWidth="124.0" text="Label" />
+                                    <Label fx:id="take_genreLabel" layoutX="80.0" layoutY="64.0" prefHeight="18.0" prefWidth="114.0" text="Label" />
+                                    <Label fx:id="take_dateLabel" layoutX="116.0" layoutY="95.0" prefHeight="18.0" prefWidth="80.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="take_clearBtn" layoutX="18.0" layoutY="365.0" mnemonicParsing="false" onAction="#clearTakeData" prefHeight="42.0" prefWidth="92.0" styleClass="clear-btn" stylesheets="@dahsboardDesign.css" text="Clear" />
+                              <Button fx:id="take_takeBtn" layoutX="128.0" layoutY="365.0" mnemonicParsing="false" onAction="#takeBook" prefHeight="42.0" prefWidth="92.0" styleClass="take-btn" stylesheets="@dahsboardDesign.css" text="Take" />
+                           </children>
+                        </AnchorPane>
+                        <Separator layoutX="249.0" layoutY="36.0" orientation="VERTICAL" prefHeight="425.0" prefWidth="12.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="returnBooks_form" layoutX="161.0" layoutY="122.0" prefHeight="498.4" prefWidth="762.4" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="298.0" layoutY="9.0" prefHeight="480.0" prefWidth="449.0" styleClass="card-form" stylesheets="@dahsboardDesign.css">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" text="Issued Books">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="20.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="return_tableView" layoutX="7.0" layoutY="36.0" onMouseClicked="#selectReturnBook" prefHeight="435.0" prefWidth="438.0">
+                                <columns>
+                                  <TableColumn fx:id="return_BookTitle" prefWidth="128.0" text="Book Title" />
+                                  <TableColumn fx:id="return_Author" prefWidth="105.5999755859375" text="Author" />
+                                    <TableColumn fx:id="return_bookType" prefWidth="105.60003662109375" text="Book Type" />
+                                    <TableColumn fx:id="return_dateIssue" prefWidth="99.2000732421875" text="Date Issued" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="14.0" layoutY="9.0" prefHeight="480.0" prefWidth="266.0" styleClass="card-form" stylesheets="@dahsboardDesign.css">
+                           <children>
+                              <AnchorPane layoutX="61.0" layoutY="14.0" prefHeight="177.0" prefWidth="143.0" styleClass="image-card" stylesheets="@dahsboardDesign.css">
+                                 <children>
+                                    <ImageView fx:id="return_imageView" fitHeight="177.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="return_button" layoutX="87.0" layoutY="240.0" mnemonicParsing="false" onAction="#returnBooks" prefHeight="45.0" prefWidth="93.0" styleClass="return-btn" stylesheets="@dahsboardDesign.css" text="Return" />
+                           </children>
+                        </AnchorPane>
+                        <Separator layoutX="280.0" layoutY="43.0" orientation="VERTICAL" prefHeight="411.0" prefWidth="11.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="addBooks_form" prefHeight="497.6" prefWidth="762.4" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="9.0" prefHeight="480.0" prefWidth="266.0" styleClass="card-form" stylesheets="@dahsboardDesign.css">
+                           <children>
+                              <TextField fx:id="txtTitleBook" layoutX="105.0" layoutY="14.0" prefHeight="30.0" prefWidth="150.0" styleClass="textfield_take" stylesheets="@dahsboardDesign.css" />
+                              <Label layoutX="14.0" layoutY="20.0" text="Title Book:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtAuthor" layoutX="105.0" layoutY="55.0" prefHeight="30.0" prefWidth="150.0" styleClass="textfield_take" stylesheets="@dahsboardDesign.css" />
+                              <Label layoutX="14.0" layoutY="61.0" text="Author:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="12.0" layoutY="106.0" text="Type Book:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="15.0" layoutY="155.0" text="Image:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="20.0" layoutY="315.0" text="Date:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnAddBook" layoutX="10.0" layoutY="363.0" mnemonicParsing="false" onAction="#save" prefHeight="41.0" prefWidth="87.0" styleClass="add-btn" stylesheets="@dahsboardDesign.css" text="Add" AnchorPane.leftAnchor="10.0" />
+                              <Button fx:id="btnUpdateBook" layoutX="167.0" layoutY="363.0" mnemonicParsing="false" onAction="#updateBook" prefHeight="41.0" prefWidth="87.0" styleClass="update-btn" stylesheets="@dahsboardDesign.css" text="Update" AnchorPane.rightAnchor="12.199999999999989" />
+                              <Button layoutX="89.0" layoutY="417.0" mnemonicParsing="false" onAction="#deleteBook" prefHeight="41.0" prefWidth="87.0" styleClass="delete-btn" stylesheets="@dahsboardDesign.css" text="Delete" />
+                              <DatePicker fx:id="txtDate" layoutX="104.0" layoutY="309.0" prefHeight="30.0" prefWidth="150.0" promptText="MM-DD-YYYY" styleClass="date" stylesheets="@dahsboardDesign.css" />
+                              <TextField fx:id="txtTypeBook" layoutX="103.0" layoutY="97.0" prefHeight="32.0" prefWidth="150.0" styleClass="textfield_take" stylesheets="@dahsboardDesign.css" />
+                              <TextField fx:id="txtImage" layoutX="102.0" layoutY="152.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="298.0" layoutY="9.0" prefHeight="480.0" prefWidth="449.0" styleClass="card-form" stylesheets="@dahsboardDesign.css">
+                           <children>
+                              <TableView fx:id="aBook" layoutX="9.0" layoutY="8.0" onMouseClicked="#selectBook" prefHeight="463.0" prefWidth="430.0">
+                                <columns>
+                                  <TableColumn fx:id="cTitle" prefWidth="109.5999755859375" text="Book Title" />
+                                  <TableColumn fx:id="cAuthor" prefWidth="90.4000244140625" text="Author" />
+                                    <TableColumn fx:id="cType" prefWidth="102.39996337890625" text="Book Type" />
+                                    <TableColumn fx:id="cImage" minWidth="0.800048828125" prefWidth="127.20004882812498" text="Image" />
+                                    <TableColumn fx:id="cDate" minWidth="0.800048828125" prefWidth="127.20004882812498" text="Date" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
